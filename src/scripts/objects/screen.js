@@ -1,13 +1,15 @@
 const screen = {
     userProfile: document.querySelector(".profile-data"),
     renderUser(user) {
-        this.userProfile.innerHTML = `
+     this.userProfile.innerHTML = `
             <div class=info>
                 <img src= "${user.avatarUrl}" alt="Foto do perfil do usuário">
                 <div class="data">
                     <h1>${user.name ?? "Não possui nome cadastrado 😢"}</h1>
                     </br>
                     <p>${user.bio ?? "Não possui bio cadastrada 😢"}</p>
+                    <p style="display: inline">Seguidores: ${user.followers}</p>
+                    <p style="display: inline">Seguindo: ${user.following}</p>
                 </div>
             </div>`;
 
