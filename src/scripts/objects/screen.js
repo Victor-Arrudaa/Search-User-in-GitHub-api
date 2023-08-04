@@ -18,7 +18,17 @@ const screen = {
         let repositoriesItens = "";
         user.repositories.forEach(
             (repo) =>
-                (repositoriesItens += `<li><a href="${repo.html_url} target "_blank" ">${repo.name}</a></li>`)
+                (repositoriesItens += `
+                <li>
+                <a href="${repo.html_url} target "_blank" ">${repo.name}
+                    <p></p><br>
+                    <p class = "count">🍴${repo.forks_count}</p>
+                    <p class = "count">⭐${repo.stargazers_count}</p>
+                    <p class = "count">👀${repo.watchers_count}</p>
+                    <p class = "count">👨‍💻${repo.language}</p>
+                    
+                </a><li>
+                `)
         );
 
         if (user.repositories.length > 0) {
@@ -33,10 +43,10 @@ const screen = {
         let eventItens = "";
         user.events.forEach(
             (event) =>
-                (eventItens += `<li><h3 style="display: inline">${event.repo.name} - </h3><p>${event.payload.commits[0].message}</p></li>`)
+                (eventItens += `
+                    <h3 style="display: inline">${event.repo.name} - ${event.payload.commits[0].message} </h3>
+                    `)
         );
-
-        console.log(user.events);
 
         if (user.events.length > 0) {
             this.userProfile.innerHTML += `<div class = events section>

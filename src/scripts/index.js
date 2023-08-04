@@ -29,7 +29,7 @@ function validateEmptyInput(userName) {
 
 async function getUserData(userName) {
     const userResponse = await getUser(userName);
-    console.log(userResponse);
+    // console.log(userResponse);
 
     if (userResponse.message === "Not Found") {
         screen.renderNotFound();

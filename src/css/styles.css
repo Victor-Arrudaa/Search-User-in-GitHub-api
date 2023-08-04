@@ -148,6 +148,15 @@ main {
     color: #fff;
 }
 
+.container .profile-data .repositories ul li .count {
+    display: inline;
+    padding: 8px;
+    border-radius: 6px;
+    background-color: #297cf8;
+    color: white;
+    margin-right: 4px;
+}
+
 .container .profile-data.hide {
     display: none;
 }
